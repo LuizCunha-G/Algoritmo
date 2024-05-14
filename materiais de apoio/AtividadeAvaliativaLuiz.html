@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Avaliativa</title>
+</head>
+
+<body>
+
+    <DIV id="home" style="display: block;">
+        <h3>Seja bem vindo ao Banco KNAB</h3>
+        <br>
+        <h5>Simulação de Emprestimos e Investimentos</h5>
+        <br>
+        <h6>Entre com os dados da sua conta:</h6>
+        <input type="text" id="conta" placeholder="Conta: ">
+        <input type="text" id="digito" placeholder="Digito: ">
+        <input type="text" id="senha" placeholder="Senha: ">
+        <br><br>
+        <button onclick="simular()">Simular</button>
+    </DIV>
+
+
+
+
+
+    <div id="div2" style="display: none;">
+        <h3>Seja bem vindo ao Banco KNAB</h3>
+        <br>
+        <h5>Simulação de Emprestimos e Investimentos</h5>
+        <br>
+        <h6>Entre com os dados da sua conta:</h6>
+        valor da operação:
+        <input type="text" id="input_valor" placeholder="Valor: ">
+        <br><br>
+        <select id="escolha">
+            <option value="0" selected disabled> Selecione a opção</option>
+            <option value="1">Investimento</option>
+            <option value="2" selected>Emprestimo</option>
+        </select>
+        <select id="prazo">
+            <option value="0" selected disabled> Selecione o prazo </option>
+            <option value="1"> Curto </option>
+            <option value="2"> Médio </option>
+            <option value="3"> Longo </option>
+        </select>
+        <br><br>
+        <button onclick="verificar()">Mostrar o resultado</button>
+        <button onclick="#">Voltar a simulção</button>
+        <br><br>
+        <div id="resultado"></div>
+
+
+    </div>
+</body>
+
+</html>
+<script>
+    function simular() {
+
+        var Conta = Number(conta.value);
+        var Digito = Number(digito.value);
+        var Senha = (senha.value);
+        var resto = Conta % 10;
+
+        if (Conta != 0 && Digito == resto) {
+
+
+            if (Digito >= 0 && Digito <= 3) {
+                if (Senha == 'manaus') {
+                    alert('Manaus');
+                }
+                home.style.display = "none";
+                div2.style.display = "block";
+            }
+            else if (Digito >= 4 && Digito <= 7) {
+                if (Senha == 'recife') {
+                    alert('recife');
+                }
+                home.style.display = "none";
+                div2.style.display = "block";
+            }
+            else if (Senha == 'fortaleza') {
+                alert('fortaleza')
+                home.style.display = "none";
+                div2.style.display = "block";
+
+            }
+        }
+
+
+    }
+     var contador = 0;
+
+    function verificar() {
+        
+        var selectPrazo = prazo.value;
+        var selectEscolha = escolha.value;
+
+
+        var valor = Number(input_valor.value);
+ contador;
+        var medio = valor * 0.16;
+        var longo = valor * 0.10;
+        var curto = valor * 0.24;
+
+        var medioI = valor * 0.08;
+        var longoI = valor * 0.12;
+        var curtoI = valor * 0.05;
+
+
+
+
+        if (selectEscolha == 1 && selectPrazo == 1) {
+            contador += 1;
+            resultado.innerHTML += (`Simulação ${contador} Investindo R$ ${valor} no curto prazo o seu rendimento será de R$ ${curtoI * 12} ao ano <br>`);
+            
+          
+        }
+        if (selectEscolha == 1 && selectPrazo == 2) {
+            contador += 1;
+            resultado.innerHTML += (`Simulação ${contador} Investindo R$ ${valor} no médio prazo o seu rendimento será de R$  ${medioI * 12} ao ano <br>`);
+           
+        }
+        if (selectEscolha == 1 && selectPrazo == 3) {
+            contador += 1;
+            resultado.innerHTML += (`Simulação ${contador} Investindo R$ ${valor} no longo prazo o seu rendimento será de R$  ${longoI * 12} ao ano <br>`);
+            
+        }
+        if (selectEscolha == 2 && selectPrazo == 1) {
+            contador += 1;
+            alert('Esta operação está condicionada ao seu perfil');
+            resultado.innerHTML += (`Simulação ${contador} Para o empréstimo de R$ ${valor} no curto prazo será cobrado os juros de R$ ${curto * 12} ao ano <br>`);
+           
+        }
+        if (selectEscolha == 2 && selectPrazo == 2) {
+            contador += 1;
+            alert('Esta operação está condicionada ao seu perfil');
+            resultado.innerHTML += (`Simulação ${contador} Para o empréstimo de R$ ${valor} no médio prazo será cobrado os juros de R$ ${medio * 12} ao ano <br>`);
+            
+        }
+        if (selectEscolha == 2 && selectPrazo == 3) {
+            contador += 1;
+            resultado.innerHTML += (`Simulação ${contador} Para o empréstimo de R$ ${valor} no longo prazo será cobrado os juros de R$ ${longo * 12} ao ano <br>`);
+            
+        }
+
+
+
+
+    }
+
+</script>

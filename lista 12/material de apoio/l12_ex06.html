@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L12-Ex06</title>
+</head>
+
+<body>
+    Quais filmes que você assistiu: <input type="text" id="input_filme">
+    <button onclick="adicionar()">Cadastrar filme</button>
+    <b id="b_sucesso"></b> <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var filmes = [];
+
+    function adicionar() {
+        if (input_filme.value == '') {
+            b_sucesso.innerHTML = `<span style="color: red;">digite o nome do filme que você gosta</span>`;
+        } else {
+            filmes.push(input_filme.value);
+            b_sucesso.innerHTML = `O filme ${input_filme.value} cadastrado com sucesso!`;
+            
+            input_filme.value = ''
+            div_mensagem.innerHTML = '';
+            
+            for (var index = 0; index < filmes.length; index++) {
+                div_mensagem.innerHTML += `O ${index + 1}º filme é o ${filmes[index]} <br>`;
+            }
+        }
+    }
+
+</script>

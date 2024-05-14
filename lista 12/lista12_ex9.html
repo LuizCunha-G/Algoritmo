@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>Projetos</h1>
+
+    Insira quantos projetos você já fez: <input type="text" id="input_projeto"> <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="mostrar()">Mostrar</button>
+
+
+    <div id="div_mensagem"></div>
+
+
+
+</body>
+
+</html>
+
+<script>
+
+    var cadastro = [];
+
+    function cadastrar() {
+
+        var projetos = input_projeto.value;
+
+        cadastro.push(projetos);
+
+        var qtdProjetos = cadastro.length;
+
+        var mensagem = "";
+
+
+
+
+
+        for (var index = 0; index < qtdProjetos; index++) {
+
+            var sequencia = cadastro[index];
+
+            if (index <= 4) {
+                mensagem += `<br>Você já fez ${cadastro.length} projetos. Por isso você é um profissional junior   <br>`
+
+            } else if (index >= 5 && index <= 12) {
+                mensagem += `<br>Você já fez ${cadastro.length} projetos. Por isso você é um profissional pleno   <br>`
+
+            } else if (index >= 13) {
+                mensagem += `<br>Você já fez ${cadastro.length} projetos. Por isso você é um profissional senior   <br>`
+
+            }
+
+
+            mensagem += `<br> ${sequencia} <br>`
+
+        }
+
+
+        div_mensagem.innerHTML = mensagem;
+    }
+
+
+    function mostrar() {
+        
+        var projetos = input_projeto.value;
+
+        cadastro.push(projetos);
+
+        var qtdProjetos = cadastro.length;
+
+        var mensagem = "";
+
+
+        for (var index = cadastro.length - 1; index >= 0; index--) {
+
+            var sequencia = cadastro[index];
+
+            if (index <= 4) {
+                mensagem += `<br>Você já fez ${cadastro.length} projetos. Por isso você é um profissional junior   <br>`
+
+            } else if (index >= 5 && index <= 12) {
+                mensagem += `<br>Você já fez ${cadastro.length} projetos. Por isso você é um profissional pleno   <br>`
+
+            } else if (index >= 13) {
+                mensagem += `<br>Você já fez ${cadastro.length} projetos. Por isso você é um profissional senior   <br>`
+
+            }
+
+
+            mensagem += `<br> ${sequencia} <br>`
+
+        }
+
+        div_mensagem.innerHTML = mensagem;
+
+
+    }
+</script>

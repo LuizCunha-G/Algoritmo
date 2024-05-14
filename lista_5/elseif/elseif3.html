@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+</head>
+<body >
+    <h1>Analisar idade</h1>
+    <label for="entre com a idade: "></label>
+    <input type="text" name="" id="input_idade">
+    <br><br>
+    <button onclick="analisar()">Analisar</button>
+    <button onclick="finalizar()">Finalisar</button>
+</body>
+</html>
+<script>
+    var maior = 0;
+    var menor_16 = 0;
+    var menor_eleitor = 0;
+    var total = 0;
+
+
+    function analisar(){
+        var idade = Number(input_idade.value);
+        
+         if  (idade >= 18) {
+            maior++;
+            alert ('Total  de pessoas maior de idade =' + maior)
+         }
+         else if(idade >= 16){
+                menor_eleitor++;
+                
+                alert(`Total de eleitores menor de idade = ${menor_eleitor}`);
+            }
+            else{
+                menor_16++
+                alert (`Total  de pessoas menor de idade = ${menor_16}`)
+            }
+            menor += 1;
+           
+         }
+         total += idade;
+        //  total = total + idade;
+
+    
+    function finalizar(){
+        alert (`a Idade média é = ${total/(maior+menor_eleitor+menor_16).toFixed(2)}`)
+        menor_16 = 0;
+        maior = 0;
+        menor_eleitor= 0;
+        total = 0;
+
+    }
+</script>

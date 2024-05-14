@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de energia consumida em kWh:
+    <input type="text" name="" id="qtd_khw">
+    <br>
+    Bandeira tarifária da energia:
+    <input type="text" name="" id="cor_bandeira">
+    <br>
+    Volume de água consumido em litros:
+    <input type="text" name="" id="vol_litros">
+    <br>
+    Quantidade de vazamentos de água na casa:
+    <input type="text" name="" id="qtd_casa">
+    <br>
+    Volume de gás consumido em litros:
+    <input type="text" name="" id="val_por_gas">
+    <br>
+    Quantidade de MB:
+    <input type="text" name="" id="qtd_mbr">
+    <br>
+    linha telefônica:
+    <input type="text" name="" id="telefone">
+    <br><br>
+    <button onclick="Despezas()">Calcular Despezas fixas</button>
+    <br><br><br>
+
+    <div id="energiaa">aqui</div>
+    <br>
+    <div id="tese"></div>
+    <br>
+    <div id="aguaa"></div>
+    <br>
+    <div id="gass"></div>
+    <br>
+    <div id="telefonee"></div>
+    <br><br>
+
+    <div id="final">Total</div>
+</body>
+</html>
+
+<script>
+
+
+
+    function Despezas(){
+        var energia = Number(qtd_khw.value);
+        var bandeira = cor_bandeira.value;
+        var agua = Number(vol_litros.value);
+        var vazamentos = Number(qtd_casa.value);
+        var gas = Number(val_por_gas.value);
+        var megaby = Number(qtd_mbr.value);
+        var tel = (telefone.value)
+        var verde =  0.750;
+        var amarelo = 0.9;
+        var vermelho = 1;
+        var desconto = (energia * 0.1);
+        var valPorLitro = 3.50;
+        var numvaza = vazamentos * 1
+
+        var green = energia  * verde
+        if(bandeira  == 'verde'){
+            
+
+            energiaa.innerHTML = `Sua conta veio ${green}`
+
+        }
+        var yellow = energia * amarelo 
+
+        if(bandeira == 'amarelo'){
+           
+
+            energiaa.innerHTML  = `Sua conta veio ${yellow}`
+
+        }
+
+        var red = energia * vermelho
+        if(bandeira == 'vermelho'){
+           
+
+            energiaa.innerHTML  = `Sua conta veio ${red}`
+        }
+
+        var desc = energia - desconto
+        if(energia > 50){
+            
+
+            tese.innerHTML = `seu acrescimo esta como ${desc}`
+        }
+        
+        else{
+            
+            tese.innerHTML = `  sua conta não veio com acrescimo`
+        }
+
+        var contaagua = agua * valPorLitro 
+
+        aguaa.innerHTML = ` valor da agua é ${contaagua} <br> `
+
+
+        var adicionalagua = contaagua + 10
+
+        if ( numvaza > 0){
+           
+            
+            aguaa.innerHTML += `valor da agua ${adicionalagua}`
+        }
+
+        else{
+            aguaa.innerHTML += `valor agua ${contaagua}`
+        }
+
+        var gascons = (gas * 2.50)
+        var gasss = gas = gascons
+
+        gass.innerHTML = `Seu gás veio ${gascons}`
+
+        var precotel = 0.80
+        var telPorCada = (megaby * precotel)
+        var acresci = telPorCada * 0.25
+
+        telefonee.innerHTML = `Sua Conta veio ${telPorCada} <br>`
+
+        var acrescimo = telPorCada + acresci
+
+        if(tel == 'sim'){
+
+            telefonee.innerHTML += `seu plano acrescentou ${acrescimo}, e ficou `
+
+        }
+
+        var descon = telPorCada * 0.750
+            var des = telPorCada - descon
+        if(tel == 'não'){
+            
+
+            telefonee.innerHTML += `seu plano diminuiu ${des}` 
+        }
+
+
+        final.innerHTML = ` Com o consumo de ${energia} kWh na bandeira ${bandeira}, a conta de energia totaliza R$ ${desc}. <br>
+        Com o consumo de ${agua} litros de água contendo ${vazamentos} vazamentos, a conta de água totaliza R$ ${contaagua}.<br>
+        Com o consumo de ${gas} litros de gás, a conta de gás totaliza R$ ${gasss} .  <br>
+        Com o consumo de ${} MB de internet, o valor do plano de internet/telefone totaliza R$ JJ. `
+
+
+
+    
+
+
+
+
+       
+
+
+    
+
+        
+        
+
+    }
+
+</script>

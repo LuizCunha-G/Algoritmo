@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lindinho.css">
+</head>
+<body>
+    <h1>Pagina de Login</h1>
+    <label for="">Login</label>
+    <input type="text" name="" id="ipt_login">
+    <br>
+    <label for="">Senha</label>
+    <input type="password" name="" id="ipt_senha">
+    <br>
+    <label for="">Informação Pessoal</label>
+    <input type="text" name="" id="ipt_info">
+    <br><br> 
+    <button onclick="sla()">Autenticar</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function sla(){
+        var login = ipt_login.value;
+        var senha = ipt_senha.value;
+        var info =  ipt_info.value;
+
+        if (login == "ana" && senha == "braga" && info == '1949' || info == 'Louro jose' ){
+            msg.innerHTML = (`Usuário Autenticado`)
+        }
+
+        else {
+            msg.innerHTML = (`Falha Autenticação`)
+        }
+    }
+</script>

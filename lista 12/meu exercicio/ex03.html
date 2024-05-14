@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Bairro</title>
+</head>
+<body>
+
+    <h1>Cadastre Bairro onde Morou:</h1>
+    <p>Digite o nome do bairro:</p>
+    <input type="text" id="input_nomeBairro">
+    <br><br>
+
+    <button onclick="cadastrarBairro()">Cadastrar bairro</button>
+
+    <p>Digite o número onde voce morou:</p>
+    <input type="text" id="input_numero">
+    <br><br>
+
+    <button onclick="relembrar()">Relembrar Moradia</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
+
+</body>
+</html>
+
+<script>
+
+    var listaBairro = [];
+
+    function cadastrarBairro(){
+        var bairro = input_nomeBairro.value;
+        var bairroIndice = listaBairro.indexOf( bairro );
+        
+        if (bairroIndice != -1){
+            alert('Você ja cadastrou esse bairro');
+
+        } else {
+            alert('Bairro Cadastrado');
+            listaBairro.push( bairro );
+        }
+    }
+
+    function relembrar(){
+        var numero = Number(input_numero.value);
+        var tamanhoLista = listaBairro.length;
+
+        if (tamanhoLista > 0){
+
+            if (numero != tamanhoLista){
+                alert('Você ainda não adicionou essa moradia');
+
+            } else {
+                resultado.innerHTML = `Sua ${numero}º foi ${listaBairro[ numero - 1 ]}`;
+            }
+
+        } else {
+            alert('Lista está vazia');
+        }
+
+    }
+
+</script>

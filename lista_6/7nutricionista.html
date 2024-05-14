@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nutrologa</h1>
+
+    <label for="">Quantos pães você tem comido por dia:</label>
+    <input type="text" name="" id="input_paes_por_dia">
+    <br><br>
+    <label for="">Quantas bolachas você tem comido por dia:</label>
+    <input type="text" name="" id="input_bolacha">
+    <br><br>
+    <label for="">Quantos copos de achocolatado você tem tomado por dia: </label>
+    <input type="text" name="" id="input_tody">
+    <br><br><br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <br><br><br>
+    <div id="mostrar"></div>
+    
+</body>
+</html>
+
+<script>
+    var pao = 50;
+    var bolacha = 80;
+    var achocolatado = 70;
+
+    function verificar(){
+        var paozinho = Number(input_paes_por_dia.value);
+        var biscoito = Number(input_bolacha.value);
+        var nescau = Number(input_tody.value);
+        var bread = (pao * paozinho);
+        var biscuit = (bolacha * biscoito);
+        var leite = (achocolatado * nescau);
+        var cafe = biscuit + leite + bread;
+
+        if (cafe < 200){
+            mostrar.innerHTML = (`Parabéns, vai ficar em forma!`)
+        }
+
+        else if (cafe <= 400){
+            mostrar.innerHTML = (`Cuidado, vai ficar menos saudável`)
+        }
+
+        else if (cafe > 400){
+            mostrar.innerHTML = (`Alerta crítico de saúde !!`)
+        }
+
+    }
+
+</script>

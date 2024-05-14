@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Estágio</h1>
+    <label for="">Empresa</label>
+    <br>
+    <input type="text" name="" id="ipt_empresa">
+    <br><br>
+
+    <label for="">Bolsa empresa</label>
+    <br>
+    <input type="text" name="" id="ipt_bolsa">
+    <br><br>
+    <label for="">VR da empresa</label>
+    <br>
+    <input type="text" name="" id="ipt_vr">
+    <br><br>
+    <label for=""> tempo de descolamento</label>
+    <br>
+    <input type="text" name="" id="ipt_desc">
+    <br><br>
+    <button onclick="sla()">É Preferida?</button>
+
+
+    
+</body>
+</html>
+<script>
+
+    var empresa = ''
+
+    function sla(){
+        empresa = ipt_empresa.value;
+        var bolsa = Number(ipt_bolsa.value);
+        var  vr = Number(ipt_vr.value);
+        var desc = Number(ipt_desc.value);
+
+        if(bolsa >= 1800 || vr >= 50 || desc >= 30){
+
+            alert(`A empresa ${empresa} é uma de suas preferências`)
+        }
+
+        else {
+            alert(`A empresa ${empresa} está fora da sua lista`)
+    }
+    }
+
+   
+
+</script>

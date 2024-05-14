@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_corrida">
+    <br>
+    <button onclick="Calcular()">Iniciar corrida!</button>
+    <br><br> 
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var corrida = Number(ipt_corrida.value);
+
+        for( var i = 1; i <= corrida; i++){
+            msg.innerHTML += `Carro dando a ${i}º volta <br>`
+        }
+         msg.innerHTML  += `<hr>corrida finalizada`
+
+    }
+</script>

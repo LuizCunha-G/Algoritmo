@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt_start">
+    <br><br>
+    <input type="text" name="" id="ipt_fim">
+    <br><br>
+    <button onclick="calcular()">S2pares</button>
+
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var start = Number(ipt_start.value);
+        var fim = Number(ipt_fim.value);
+        var pares = 0;
+
+         var primeiroPar = start + (start % 2 === 0 ? 0 : 1);
+
+         for(index = primeiroPar; index <= fim ; index +=2){
+            msg.innerHTML += `${index} <br>`
+         }
+    }
+</script>

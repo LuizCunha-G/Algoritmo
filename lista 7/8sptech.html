@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SPTECH</h1>
+
+    <label for="">Login do usuário</label>
+    <input type="text" name="" id="input_login">
+    <br><br><br>
+
+    <label for="">Senha do usuário</label>
+    <input type="text" name="" id="input_senha">
+    <br><br><br>
+
+    <label for="">Código de segurança</label>
+    <input type="text" name="" id="input_codigo">
+    <br><br><br>
+
+    <button onclick="validar()">Entrar</button>
+</body>
+</html>
+
+<script>
+
+var login = ''
+var senha = ''
+var codigo = ''
+
+    function validar(){
+        login =  input_login.value;
+        senha =  input_senha.value;
+        codigo = input_codigo.value;
+
+        if ( login == 'SPTech' && senha == 'digital' && codigo == '123'){
+            alert(`usuario atenticado com sucesso`)
+        } 
+
+        else{
+            alert(`Falha na autenticação`)
+        }
+    }
+</script>

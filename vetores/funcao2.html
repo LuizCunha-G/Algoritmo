@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_frase">
+    <button onclick="clicar()">Exibir Texto</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    var texto = "";
+    var cont = 1;
+    function clicar(){
+        
+    
+
+        if(cont < 5){
+            var frase = ipt_frase.value;
+        texto += `${frase} <br>`;
+        mensagem.innerHTML = texto;
+            cont++;
+            clicar();
+        }
+
+        
+        
+    }
+
+
+</script>

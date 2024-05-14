@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt_start">
+    <br><br>
+    <input type="text" name="" id="ipt_fim">
+    <br><br>
+    <button onclick="calcular()">S2pares</button>
+
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        
+        var fim = Number(ipt_fim.value);
+        var pares = 0;
+
+        for (var start = Number(ipt_start.value); start <= fim; start++) {
+
+            var resto = start % 2;
+
+            if (resto == 0) {
+
+                msg.innerHTML += start + " é um número par <br><br>"
+
+            } else {
+
+                msg.innerHTML += start + " um número ímpar <br><br>"
+
+            }
+
+        } if (start > fim) {
+
+
+        }
+
+    }
+</script>

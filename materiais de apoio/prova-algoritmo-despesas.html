@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Mensal</title>
+</head>
+<body>
+
+    <h1>Despesas de Casa</h1>
+
+    <p>Energia:</p>
+    <input type="text" id="input_ener">
+
+    <p>Bandeira:</p>
+    <input type="text" id="input_band">
+
+    <p>Volume de agua:</p>
+    <input type="text" id="input_agua">
+
+    <p>Quantidade de Vazamento:</p>
+    <input type="text" id="input_vaza">
+
+    <p>Gas Consumido:</p>
+    <input type="text" id="input_gas">
+
+    <p>MB plano de internet:</p>
+    <input type="text" id="input_internet">
+
+    <p>Possui Linha Telefonica Vinculada?</p>
+    <input type="text" id="input_teleV">
+    <br><br>
+
+    <button onclick="calcuDespe()">Calcular Despesas Fixas</button>
+
+    <h1>Resultado das Despesas:</h1>
+    <div>
+        <p id="campoIncorreto"></p>
+        <p id="resultado"></p>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    var ener = 0;
+    var agua = 0;
+    var vaza = 0;
+    var gas = 0;
+    var internet = 0;
+
+    var contaEner = 0;
+    var contaAgua = 0;
+    var contaVaza = 0;
+    var contaGas = 0;
+    var contaInter = 0;
+
+    var valorConta = 0;
+
+    function calcuDespe(){
+
+        ener = Number(input_ener.value);
+        agua = Number(input_agua.value);
+        vaza = Number(input_vaza.value);
+        gas = Number(input_gas.value);
+        internet = Number(input_internet.value);
+
+        var band = input_band.value;
+        var teleV = input_teleV.value;
+
+        // Bandeira Verde Amarela e Vermelha
+        if (band == "verde"){
+            //resultado.innerHTML = `Está funcionando ${band}`;
+            contaEner = ener * 0.75;
+        } else {
+            if (band == "amarela"){
+                contaEner = ener * 0.90;
+            } else {
+                if (band == "vermelha"){
+                    contaEner = ener * 1;
+                } else {
+                    campoIncorreto.innerHTML += `Bandeira incorreta`;
+                }
+            }
+        }
+
+        // Desconto bandeira
+        if (contaEner <= 50){
+            contaEner = contaEner - (contaEner * 10 / 100);
+        }
+
+        // Conta Agua
+        contaAgua = agua * 3.50;
+
+        if (vaza > 0){
+            contaVaza = vaza * 10.00;
+            contaAgua = contaAgua + contaVaza;
+
+            //resultado.innerHTML = `funcionou ${contaAgua}`;
+        } else {
+            //resultado.innerHTML = `funcionou ${contaAgua}`;
+        }
+
+        //Conta Gas
+        contaGas = gas * 2.50;
+        //resultado.innerHTML = `conta de Gas ${contaGas}`;
+
+        //Conta de Internet e Telefone
+        contaInter = internet * 0.80;
+
+        if (teleV == "sim"){
+            contaInter = contaInter + (contaInter * 25 / 100);
+        } else {
+            if (teleV == "não"){
+                contaInter = contaInter - (contaInter * 7.5 / 100);
+            } else {
+                campoIncorreto.innerHTML += ` Incorreto telefone vinculado`;
+            }
+        }
+
+        //Valor Total da Conta
+        valorConta = contaEner + contaAgua + contaGas + contaInter;
+
+        resultado.innerHTML = `
+        Com o consumo de ${ener} kWh na bandeira ${band}, a conta de energia totaliza R$${contaEner}. <br>
+        Com o consumo de ${agua} litros de água contendo ${vaza} vazamentos, a conta de água totaliza R$${contaAgua}. <br>
+        Com o consumo de ${gas} litros de gás, a conta de gás totaliza R$${contaGas}. <br>
+        Com o consumo de ${internet} MB de internet, o valor do plano de internet/telefone totaliza R$${contaInter}. <br>
+        Gasto total de despesas mensal: R$${valorConta}. <br>
+        `;
+
+    }
+
+</script>

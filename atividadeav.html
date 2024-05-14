@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="div_pai" style="display: block;">
+    <h1>Seja bem vindo ao Banco KNAB</h1>
+    <br><br>
+    <h3>Simulação de Emprestimo</h3>
+    <br><br>
+    <label for=""><b>Entre com os dados de sua conta:</b></label>
+    <br>
+    <input type="text" id="ipt_conta" placeholder="Conta">
+    <input type="text" id="ipt_digito" placeholder="Digito">
+    <input type="text" id="ipt_senha" placeholder="Senha">
+    <br><br>
+    <button onclick="Simulacao()">Simular</button>
+    <div id="msg"></div>
+
+    
+    <div id="div_filho" style="display: none;">
+        <h1>Seja bem vindo ao Banco KNAB</h1>
+        <h2>Emprestimos e Investimentos com as melhores taxas do mercado</h2><br><br>
+        <b>Entre com os dados  da sua Simulação</b><br><br>
+        valor da Operação<input type="text" placeholder="Valor" id="ipt_opr"><br><br>
+        <select name="" id="st_tipo">
+            <option disabled selected value="0">Selecione a Operação</option>
+            <option value="emprestimo">Emprestimo</option>
+            <option value="investimento">Investimento</option>
+        </select>
+        <select name="" id="st_prazo">
+            <option disabled selected value="0">Selecione o Prazo</option>
+            <option value="curto">Curto</option>
+            <option value="medio">Meio</option>
+            <option value="longo">Longo</option>
+        </select><br><br>
+        <button onclick="calc()">Mostrar Resultados</button>
+        <button onclick="voltar()">Voltar a Simulação</button>
+        <br>
+        
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    function  Simulacao(){
+        var conta = Number(ipt_conta.value);
+        var digito = Number(ipt_digito.value);
+        var senha = ipt_senha.value;
+        var resto = conta % 10;
+
+        if( conta != 0 && digito == resto ){
+            if(digito >= 0 && digito <= 3){
+                if(senha == 'manaus'){
+                    alert('Manaus');
+                }
+                div_pai.style.display = 'none';
+                div_filho.style.display = 'block';
+            }
+
+
+            else if (digito >= 4 && digito <= 7){
+                if(senha == 'recife'){
+                    alert('Recife')
+                }
+                div_pai.style.display = 'none';
+                div_filho.style.display = 'block';
+
+            }
+            
+            
+            else if (digito > 7){
+                if(senha == 'fortaleza'){
+                    alert('Fortaleza')
+                }
+                div_pai.style.display = 'none';
+                div_filho.style.display = 'block';
+            }
+        }
+    }
+</script>

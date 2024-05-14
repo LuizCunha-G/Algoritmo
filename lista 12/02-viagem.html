@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Viagem</title>
+</head>
+<body>
+
+    <h1> DESTINO DE VIAGEM </h1>
+
+    <p>Destino de Viagem:</p>
+    <input type="text" id="input_destino">
+    <br><br>
+
+    <button onclick="adicionar()"> Adicionar </button>
+    <button onclick="primeira_Viagem()"> Primeira Viagem </button>
+    <button onclick="terceira_Viagem()"> Terceira Viagem </button>
+    <button onclick="ultimaV()"> Ultima Viagem </button>
+
+    <h3>Resultado</h3>
+    <p id="resultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    var listaDestino = [];
+    var tamanhoLista = 0;
+
+    function adicionar(){
+        var destino = input_destino.value;
+        var indiceDestino = listaDestino.indexOf( destino );
+        tamanhoLista = listaDestino.length;
+
+    }
+
+    function primeira_Viagem(){
+        if (tamanhoLista == 0){
+            resultado.innerHTML = `Você ainda não viajou para nenhum lugar ainda`;
+        } else {
+            resultado.innerHTML = `Sua Primeira Viagem foi ${listaDestino[0]}`;
+        }
+    }
+
+    function terceira_Viagem(){
+        if (tamanhoLista == 0){
+            resultado.innerHTML = `Você ainda não teve uma terceira viagem`;
+        } else {
+            resultado.innerHTML = `Sua Terceira Viagem foi ${listaDestino[2]}`;
+        }
+    }
+
+    function ultimaV(){
+        var ultimoIndice = tamanhoLista - 1;
+        var ultimaViagem = listaDestino[ ultimoIndice ];
+        if (tamanhoLista == 0){
+            resultado.innerHTML = `Você ainda não fez nenhuma viagem`;
+        } else {
+            resultado.innerHTML = `Sua Ultima viagem realizada foi ${ultimaViagem}`;
+        }
+    }
+
+</script>

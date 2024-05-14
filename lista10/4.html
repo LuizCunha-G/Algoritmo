@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styli.css">
+</head>
+<body>
+    <button onclick="sla()">s2pares</button>
+
+    <div id="outro"></div>
+</body>
+</html>
+<script>
+    function sla(){
+
+        for(index = 0; index<100; index++){
+                // |        |          |
+                // V        V          V
+            // index = 0; index<100; index++
+            // inicio da variavel, condição, incremento ou decremento
+            var resto = index %2;
+            if(resto == 0){
+                outro.innerHTML += `${index} <br>`;
+            }
+                
+
+            
+    }
+}
+
+</script>

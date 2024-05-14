@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de Frutas</title>
+</head>
+<body>
+
+    <h1>LISTAS DE FRUTAS</h1>
+
+    <p>Pesquise uma fruta</p>
+    <input type="text" id="input_fruta">
+    <br><br>
+
+    <button onclick="exibir()"> Pesquisar </button>
+
+    <br>
+    <p id="resultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    function exibir(){
+        var fruta = input_fruta.value;
+        var listaFrutas = ['Maçã', 'Banana', 'Uva', 'Melão'];
+
+        var indiceFrutas = listaFrutas.indexOf(fruta);
+
+        if (indiceFrutas != -1){
+            resultado.innerHTML += `Fruta ${fruta} <br>`;
+
+        } else {
+            alert('Essa fruta não está na lista');
+            
+        }
+
+    }
+
+</script>

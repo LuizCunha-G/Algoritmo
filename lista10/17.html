@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styli.css">
+</head>
+<body>
+    <label for="">Quantas Garrafas de cocas você já tomou: </label>
+    <input type="text" id="ipt_coca">
+    <br><br>
+    <button onclick="calcular()">Ver a quantidade</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var coca = Number(ipt_coca.value);
+
+        for(var i = 1; i <= coca; i++){
+            msg.innerHTML += `${i} garrafinhas de Coca-Cola <br>`
+        }
+    }
+</script>

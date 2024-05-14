@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastre Filme Favorito pt2 </title>
+</head>
+<body>
+
+    <h1> Cadastre seus Filmes Preferidos </h1>
+
+    <p>Digite seu Filme Preferido:</p>
+    <input type="text" id="input_filme">
+    <br><br>
+
+    <button onclick="filmesFavoritos()"> Cadastrar Filme </button>
+    
+    <h2>Resultado</h2>
+    <p id="resultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    var listaFilme = [];
+    
+    function filmesFavoritos(){
+        var filme = input_filme.value;
+        var indiceFilme = listaFilme.indexOf( filme );
+        
+        if (indiceFilme != -1){
+            alert('Você ja cadastrou esse filme');
+        } else {
+            resultado.innerHTML = ``;
+
+            listaFilme.push( filme );
+            alert('Filme cadastrado com sucesso');
+            var tamanhoLista = listaFilme.length;
+
+            for (var contador = 1; contador <= tamanhoLista; contador++){
+                resultado.innerHTML += `${contador} - ${listaFilme[ contador - 1 ]} <br>`;
+            }
+        }
+    }
+
+</script>

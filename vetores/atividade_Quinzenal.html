@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cassino</title>
+    <style>
+        body{
+            align-items: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <label for=""> Quantas balas o usuário vai apostar por rodada: </label>
+    <input type="text" id="ipt_balas">
+    <br>
+    <label for="">Qual o seu número da sorte: </label>
+    <input type="text" id="ipt_sorte">
+    <br>
+    <button onclick="valendo()">Valendo</button>
+    <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+
+    function valendo(){
+       var balas = Number(ipt_balas.value);
+       var sorte = Number(ipt_sorte.value);
+
+        if(balas < 1 ){
+            alert(`digito invalidos`)
+        }
+
+        if(sorte < 2 || sorte > 12){
+            alert(`digito invalidos`)
+        }
+       
+        var saldo = 0
+        var rodadas = Math.random() * 20;
+            msg.innerHTML = `Serão ${rodadas.toFixed(0)} Rodadas <br>`;
+    
+        for(var i = 0; i < rodadas; i++){
+            var dado1 = Math.random() * 6  + 1;
+            var dado2 = Math.random() * 6  + 1;
+            var soma = dado1 + dado2;
+            var resultado = soma == sorte ? 'Ganhou' : 'Perdeu';
+
+            if(resultado == 'Ganhou'){
+                saldo += balas * 10;
+            }
+            else{
+                saldo -= balas;
+            }
+
+            msg.innerHTML += `Rodada ${i + 1}: Dado 1: <b>${dado1.toFixed(0)}</b> | Dado 2: <b>${dado2.toFixed(0)}</b> | Você <b>${resultado}</b>, Saldo de balas: <b>${saldo.toFixed(0)}</b><br>`
+
+        }
+
+        var resumo = saldo === 0 ? "Isso é incrível! A probabilidade disso é pequena." :
+                     saldo > 0 ? "Parabéns! Você terminou com saldo a receber." :
+                     "Você terminou com saldo negativo. Recarregue suas balas.";
+
+        msg.innerHTML += `<br>Resumo do jogo: ${resumo}`;
+
+    }
+
+</script>

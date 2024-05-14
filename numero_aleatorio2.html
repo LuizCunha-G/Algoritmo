@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número Aleatório</title>
+</head>
+
+<body>
+    <h2>Motrando aleaório</h2>
+    Entre com a quantidade de números
+    <input type="text" id="ipt_qntd"><br><br>
+    <button onclick="sortear()">Sortear</button>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    function sortear() {
+        var qntd = Number(ipt_qntd.value)
+        var acima = 0
+        var abaixo = 0
+        for (var index = 0; index < qntd; index++) {
+            var aleatorio = Math.random()
+            if (aleatorio >= 0.5) {
+                msg.innerHTML += `${aleatorio} está na metade superior dos números <br>`
+                acima++
+            } else {
+                msg.innerHTML += `${aleatorio} está na metade inferior dos números <br><br>`
+                abaixo--
+            }
+        }
+    }
+</script>

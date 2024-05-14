@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filme Favorito</title>
+</head>
+<body>
+    <h2>Lista de Filmes Favoritos</h2>
+
+    <p>Digite seu Filme Favorito:</p>
+    <input type="text" id="input_filme">
+    <br><br>
+
+    <button onclick="filmesFavoritos()"> Cadastrar Filme </button>
+
+    <button onclick="listaFavoritos()"> Ver Favoritos </button>
+
+    <h2>Resultado</h2>
+    <p id="resultado"></p>
+    
+</body>
+</html>
+
+<script>
+
+    // PODERIA SER FEITO SEM FOR SO CHAMANDO A VARIAVEL LISTAFILME
+
+    var listaFilme = [];
+
+    function filmesFavoritos(){
+        var filme = input_filme.value;
+        var indiceFilme = listaFilme.indexOf( filme );
+
+        if (indiceFilme != -1){
+            alert('Você ja adicionou esse filme');
+        
+        } else {
+            alert('Filme Cadastrado com Sucesso');
+            listaFilme.push( filme );
+
+        }
+    }
+
+    function listaFavoritos(){
+        var tamanhoLista = listaFilme.length;
+        var ultimoLista = tamanhoLista - 1;
+
+        for (var contador = 1; contador <= tamanhoLista; contador++){
+            resultado.innerHTML += `${contador} - ${listaFilme[ contador - 1 ]} <br>`;
+        } 
+
+        resultado.innerHTML += `
+        <br> 
+        <b>Total de Filmes cadastrados ${tamanhoLista}</b>
+        <br>
+        O Filme que você mais gosta é <b>${listaFilme[0]}</b>
+        <br>
+        E desses o que você menos gosta é <b>${listaFilme[ ultimoLista ]}</b>
+        `;
+    }
+
+</script>

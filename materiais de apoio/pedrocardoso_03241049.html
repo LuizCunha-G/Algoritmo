@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré - AC1</title>
+</head>
+<body align="center">
+    <h2>Vamos calcular os lucros e gastos de José?</h2>
+
+    <p>Para começar, insira abaixo os dados solicitados:</p>
+    <p>Digite a distância percorrida:</p>
+    <input type="text" id="distancia">
+    <p>Digite o tempo de duração da viagem:</p> 
+    <input type="text" id="tempo_viagem">
+    <p>Digite a quantidade de passageiros:</p> 
+    <input type="text" id="passageiro">
+    <p>Digite a hora de início da viagem:</p>
+    <input type="text" id="hora_viagem">
+    <br><br>
+    <button onclick="calcular()">Realizar viagem</button>
+    <br><br>
+    <div id="mostrar"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+
+        var dist = Number(distancia.value);
+        var tempo = Number(tempo_viagem.value);
+        var pax = Number(passageiro.value);
+        var hora_inicial = Number(hora_viagem.value);
+
+        var custo_percurso = dist * 0.77;
+
+        var estimativa_tempo = dist * 1.8;
+
+        var estimativa_viagem = estimativa_tempo * 0.1;
+        var desconto = 0;
+
+        if(tempo >= estimativa_viagem){
+            var acrescimo =  custo_percurso * 0.07;
+        }else{
+          desconto = custo_percurso * 0.08;
+        }
+
+        if (pax > 1){
+            var valor_extra = pax * 3;
+        }else{
+            var valor_extra = pax * 0;
+        }
+
+        if(hora_inicial >= 20){
+            var bonus_horario = custo_percurso*0.09;
+        }else {
+            var bonus_horario = custo_percurso*0;
+        }
+        if(hora_inicial<=6){
+            var adicional_horario = custo_percurso*0.11;
+        }else{
+            var adicional_horario = custo_percurso*0
+        }
+
+        var valor_total_corrida =  (custo_percurso + acrescimo + valor_extra + adicional_horario) - (desconto + bonus_horario) ;  
+
+        var qtd_combustivel_consu = dist/12;
+        var preco_combust =  (dist/12)*4;
+
+
+        mostrar.innerHTML = `A viagem foi iniciada às ${hora_inicial} horas e tinha estimativa de ${estimativa_tempo} minutos e durou ${tempo} minutos, <br><br> percorrendo ${dist} KM, 
+        com ${pax} passageiro(s), totalizando R$${valor_total_corrida} do preço da corrida. <br><br>Com essa distância, foram consumidos ${qtd_combustivel_consu} litros 
+        de gasolina, totalizando R$${preco_combust} de consumo.`
+}
+
+
+
+
+</script>

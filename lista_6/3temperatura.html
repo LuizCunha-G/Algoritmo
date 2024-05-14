@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Temperatura</h1>
+<input type="text" name="" id="input_temp" placeholder="digite a temperatura">
+<button onclick="temper()">frio</button>
+
+<div id="climaa"></div>
+</body>
+</html>
+
+<script>
+
+    function temper(){
+        var clima = Number(input_temp.value);
+
+        if (clima < 14){
+            
+        climaa.innerHTML = `Congelante`
+        }
+
+        else if (clima <= 21 ){
+            climaa.innerHTML = `Com frio`
+        }
+
+        else if (clima <= 24){
+            climaa.innerHTML = `Confortável `
+        }
+
+        else if ( clima <= 31){
+            climaa.innerHTML = `Com calor`
+        }
+
+        else if (clima > 31){
+            climaa.innerHTML = `Calor escaldante`
+        }
+    }
+</script>

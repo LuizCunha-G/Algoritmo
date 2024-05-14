@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Banco</h1>
+    <label for="">Metodo de pagamento</label>
+    <input type="text" name="" id="ipt_pag">
+    <br><br>
+    <button onclick="sal()">Analisar Compra</button>
+
+    
+</body>
+</html>
+<script>
+
+    var pagamento = ''
+
+    function sal(){
+        pagamento = ipt_pag.value;
+        
+
+         if ( pagamento == 'dinheiro' || pagamento == 'debito'){
+
+            alert(`Você terá que pagar a vista`)
+
+         }
+
+         else if (pagamento == 'credito' || pagamento  == 'boleto'){
+            alert(`Pagamento poderá ser parcelado`)
+         }
+        
+
+    }
+
+</script>

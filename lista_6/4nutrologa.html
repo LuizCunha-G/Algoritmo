@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperatura</h1>
+<input type="text" name="" id="input_peso" placeholder="digite o peso">
+<button onclick="temper()">frio</button>
+
+<div id="pesinho"></div>
+</body>
+</html>
+<script>
+      function temper(){
+        var peso = Number(input_peso.value);
+
+        if (peso <= 13.5){
+            pesinho.innerHTML = (`Abaixo do peso`)
+        }
+
+        else  if (peso <= 21.2){
+            pesinho.innerHTML = (`Peso na média`)
+        }
+
+        else if (peso > 21.2){
+            pesinho.innerHTML = (`Acima do peso`)
+        }
+
+        if (peso == 18.3){
+            pesinho.innerHTML = (`Peso perfeito`) 
+        }
+      }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Fruta <input type="text" id="ipt_fruta">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    var lista_frutas = [];
+
+    function cadastrar(){    
+
+        var fruta = ipt_fruta.value;
+
+        var indice_fruta = lista_frutas.indexOf(fruta);
+
+        if(indice_fruta == -1){
+        lista_frutas.push(fruta);
+        }
+        console.log(lista_frutas);
+
+        msg.innerHTML =  lista_frutas;
+    }
+</script>

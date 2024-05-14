@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Analisando renda</h1>
+    <input type="text" name="" id="input_renda" placeholder="digite sua renda">
+    <br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br><br>
+    <div id="renda"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var grana = Number(input_renda.value);
+
+        if (grana <= 250){
+
+            renda.innerHTML = `Classe E`
+        }
+
+        else if (grana <= 900){
+
+            renda.innerHTML = `Classe D`
+        }
+
+        else if ( grana <= 2500){
+
+            renda.innerHTML = `Classe C`
+        }
+
+        else if ( grana <= 9500){
+
+            renda.innerHTML = `Classe B`
+        }
+
+        else if ( grana > 9500){
+
+            renda.innerHTML = `Classe A`
+        }
+
+        
+    }
+</script>

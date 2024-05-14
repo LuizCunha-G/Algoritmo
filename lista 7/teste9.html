@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilot Selection</title>
+    <script>
+        function verifyCandidate() {
+            // Inputs
+            const minHeightInput = document.getElementById('minHeightInput');
+            const maxHeightInput = document.getElementById('maxHeightInput');
+            const candidateNameInput = document.getElementById('candidateNameInput');
+            const candidateHeightInput = document.getElementById('candidateHeightInput');
+
+            // Buttons
+            const verifyButton = document.getElementById('verifyButton');
+
+            // Alerts
+            const alert = document.getElementById('alert');
+
+            // Validation messages
+            const minMaxHeightError = 'Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial';
+            const candidateHeightError = 'Infelizmente, o candidato não atende os requisitos da seleção';
+            const candidateHeightSuccess = 'O candidato';
+
+            // Validate inputs
+            if (minHeightInput.value <= 1 || maxHeightInput.value <= minHeightInput.value) {
+                alert.textContent = minMaxHeightError;
+                return;
+            }
+
+            // Verify candidate
+            if (candidateHeightInput.value >= minHeightInput.value && candidateHeightInput.value <= maxHeightInput.value) {
+                alert.textContent = `${candidateHeightSuccess} ${candidateNameInput.value}, com altura de ${candidateHeightInput.value} metros, participará do processo de seleção de piloto.`;
+            } else {
+                alert.textContent = `${candidateHeightSuccess} ${candidateNameInput.value}, com altura de ${candidateHeightInput.value} metros, ${candidateHeightError}.`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Seleção de Pilotos</h1>
+    <p>
+        Informe o intervalo de altura para os pilotos se candidatar:
+    </p>
+    <label>
+        Altura inicial:
+        <input type="number" id="minHeightInput">
+    </label>
+    <br>
+    <label>
+        Altura final:
+        <input type="number" id="maxHeightInput">
+    </label>
+    <br>
+    <br>
+    <p>
+        Informe os dados do candidato a piloto:
+    </p>
+    <label>
+        Nome:
+        <input type="text" id="candidateNameInput">
+    </label>
+    <br>
+    <label>
+        Altura (em metros):
+        <input type="number" id="candidateHeightInput">
+    </label>
+    <br>
+    <br>
+    <button id="verifyButton" onclick="verifyCandidate()">Verificar Candidato!</button>
+    <br>
+    <br>
+    <div id="alert">
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="id1">
+    <br><br>
+    <input type="text" id="id2">
+    <br><br>
+    <button onclick="calcular()">Curto 3 e 5!</button>
+<br><br>
+<div id="msg"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var um = Number(id1.value);
+        var dois  = Number(id2.value);
+
+
+        for (i = um ;i <= dois; i++){
+
+   
+            if (i % 3 == 0 && i % 5 == 0){
+
+                msg.innerHTML += `${i} É TRI!É PENTA!<br> `
+            }
+
+            else if (i % 3 == 0){
+                msg.innerHTML += `É TRI!<br>`
+            }
+            else if (i % 5 == 0){
+                msg.innerHTML += `É PENTA!<br>`
+            }
+            else{
+                msg.innerHTML += `${i}<br>`
+            }
+
+
+            }
+        }
+    
+</script>

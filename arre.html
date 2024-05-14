@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Analise os resultados dos numéros aleatorios</h1>
+    <button onclick="sortear()">Sortear</button>
+    <br><br>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function sortear(){
+         var num = Math.random()
+         var num2 = num * 20;
+         if(num2 >= 10){msg.innerHTML += `Numero sorteado ${num} - Numero transformado ${num2} - Numero arredondado ${num2.toFixed(2)} <br>`}
+         
+        }
+</script>

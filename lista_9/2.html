@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lindinho.css">
+</head>
+<body>
+    <h1>Tinder</h1>
+    <label for="">Altura da pessoa: </label>
+    <input type="text" name="" id="ipt_altura">
+    <select name="" id="slct_cor">
+        <option selected value="0">Escolha a cor</option>
+        <option value="1">Preto</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Amarelo</option>
+        <option value="4">Castanho</option>
+    </select>
+    <br><br>
+    <button onclick="sla()">Deu Match?</button>
+    <br><br>
+    <div id="slaa"></div>
+    
+</body>
+</html>
+
+<script>
+    function sla(){
+        var altura = Number(ipt_altura.value);
+        var cor = slct_cor.value;
+
+        if (altura <= 1.85 && cor == '4' || cor == '3' ){
+            slaa.innerHTML =`<img src="https://st4.depositphotos.com/1017228/26764/i/450/depositphotos_267646780-stock-photo-handsome-cheerful-man-wearing-blank.jpg" alt="">`
+        }
+        else {
+            slaa.innerHTML = `<img src="https://img.freepik.com/fotos-premium/um-homem-triste-sentado-sozinho_218381-10758.jpg?w=360" alt=""> `
+    }
+}
+</script>

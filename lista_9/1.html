@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lindinho.css">
+</head>
+<body>
+    <h1>Avaliação de atendimento</h1>
+    <br>
+    <input type="text" name="" id="ipt_nota" placeholder="nota atendida">
+    <br><br>
+    <button onclick="sla()" >Avaliar atendimento</button>
+
+    
+</body>
+</html>
+<script>
+
+    function sla(){
+        var atendimento = Number(ipt_nota.value);
+
+        if  (atendimento < 0 || atendimento > 10) {
+            alert(`Nota inválida`)
+    }
+
+    if (atendimento >= 0 && atendimento <=5 ){
+        alert(`Não Aprovado`)
+    
+
+    }
+    else if(atendimento >= 5 && atendimento <= 6){
+        alert(`Neutro`)
+    
+    }
+
+    else if (atendimento >= 7){
+        alert(`Aprovado`)
+    }
+
+    }
+
+
+</script>

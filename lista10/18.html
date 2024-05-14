@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styli.css">
+</head>
+<body>
+    <input id="ipt_caneca">
+    <br><br>
+    <button onclick="adicionar()">Ver a quantidade</button>
+    <br><br>
+    <p id="para"></p>    
+</body>
+</html>
+<script>
+    function adicionar(){
+        var xicara = Number(ipt_caneca.value);
+        // var cafe = 2;
+        // var leite = 1;
+        // var colherc = cafe * xicara;
+        // var colherl = leite * xicara;
+
+        for(var i = 1; i <= xicara; i++){
+            para.innerHTML += `${i * 1} colheres com leite em pó e ${i * 2} colheres de café em pó <br>`
+        }
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <label for="">Renda individual
+    </label>
+    <input type="text" name="" id="ipt_renda_ind">
+    <br>
+    <br>
+    <label for="">Renda familiar</label>
+    <input type="text" name="" id="ipt_renda_fam">
+    <br><br>
+    <button onclick="sla()">Terei o benefício</button>
+
+</body>
+</html>
+<script>
+
+    function sla(){
+        var individual = Number(ipt_renda_ind.value);
+        var familia = Number(ipt_renda_fam.value);
+
+        if (individual <= 2000 ||  familia <= 3000) {
+
+            alert(`Você terá direito ao auxílio`)
+        }
+
+        else {
+
+            alert(`Sem direito ao auxílio`)
+        }
+    }
+
+
+</script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <label for="">Episódio que deseja começar assistindo:</label>
+    <input type="text" id="ipt_ep">
+    <br>
+    <label for="">Quantidade de tempo disponível:</label> 
+    <input type="text" id="ipt_qtd">
+    <br>
+    <label for="">Unidade de tempo em: </label>
+    <select name="" id="slc_tempo">
+        <option selected="disabled" value="0">Selecione uma opção</option>
+        <option value="hora">Horas</option>
+        <option value="minuto">Minutos</option>
+    </select>
+    <br>
+    <label for="">Pular Abertura? </label>
+    <select name="" id="slc_abertura">
+        <option selected="disabled" value="0">Selecione uma opção</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+    </select>
+    <br>
+    <label for="">Pular Encerramento? </label>
+    <select name="" id="slc_fim">
+        <option selected="disabled" value="0">Selecione uma opção</option>
+        <option value="sim">Sim</option>
+        <option value="nao">Não</option>
+    </select>
+    <br>
+    <button onclick="assistirEpisodios()">Assistir Episódios</button>
+    <br><br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function assistirEpisodios(){
+        // Pegando os valores dos inputs e selects
+        var ep_ipt = parseInt(document.getElementById('ipt_ep').value);
+        var qtde_tempo = parseInt(document.getElementById('ipt_qtd').value);
+        var tempo_ipt = document.getElementById('slc_tempo').value;
+        var abertura_ipt = document.getElementById('slc_abertura').value;
+        var fim_ipt = document.getElementById('slc_fim').value;
+
+        // Validando o número do episódio
+        if(ep_ipt <= 0 || ep_ipt > 1100){
+            alert("O número do episódio é inválido");
+            return; // Encerra a função se o número do episódio for inválido
+        }
+
+        // Convertendo o tempo disponível para minutos, se necessário
+        if(tempo_ipt === 'hora'){
+            qtde_tempo *= 60; // Convertendo horas em minutos
+        }
+
+        // Calculando o tempo do episódio de acordo com as opções de pular abertura e encerramento
+        var tempoEpisodio = 24; // Tempo padrão do episódio (com abertura e encerramento)
+        if(abertura_ipt === 'sim') tempoEpisodio -= 2; // Subtrai o tempo da abertura
+        if(fim_ipt === 'sim') tempoEpisodio -= 2; // Subtrai o tempo do encerramento
+
+        // Calculando quantos episódios o usuário pode assistir com o tempo disponível
+        var episodiosAssistidos = Math.floor(qtde_tempo / tempoEpisodio);
+
+        // Exibindo informações sobre os episódios
+        var msg = document.getElementById('msg');
+        msg.innerHTML = ''; // Limpa a div de mensagens antes de exibir os novos resultados
+        for(var i = 0; i < episodiosAssistidos; i++){
+            var numeroEpisodio = ep_ipt + i;
+            msg.innerHTML += `<strong>Episódio ${numeroEpisodio}:</strong><br>`;
+            var tempoAssistido = 0; // Inicializa o tempo assistido no episódio
+            for(var minuto = 1; minuto <= tempoEpisodio; minuto++){
+                if(minuto <= 2 && abertura_ipt === 'nao'){
+                    msg.innerHTML += `Minuto ${minuto} - Abertura do Episódio<br>`;
+                } else if(minuto >= 23 && fim_ipt === 'nao'){
+                    msg.innerHTML += `Minuto ${minuto} - Encerramento do Episódio<br>`;
+                } else {
+                    msg.innerHTML += `Minuto ${minuto} - Assistindo o Episódio<br>`;
+                }
+                tempoAssistido++; // Incrementa o tempo assistido
+                if(tempoAssistido >= qtde_tempo){
+                    break; // Encerra o episódio se o tempo disponível acabar
+                }
+            }
+            msg.innerHTML += '<br>';
+        }
+        // Exibe o total de episódios assistidos
+        msg.innerHTML += `Você assistiu ${episodiosAssistidos} episódio(s).`;
+    }
+</script>

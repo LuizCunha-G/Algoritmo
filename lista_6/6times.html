@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        .timao{
+            background-color: black;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .verdao{
+            background-color: green;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .tricolor{
+            background-color: red;
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .peixe{
+            background-color: aqua;
+            color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Paulistão</h1>
+
+    <input type="text" name="" id="times">
+    <br><br>
+    <button onclick="timess()">Paulista</button>
+    <br><br> 
+    <div id='timees'></div>
+    
+</body>
+</html>
+
+<script>
+     function timess(){
+        var time = ''
+
+        time = times.value;
+
+        if( time == 'Corinthians'){
+            timees.innerHTML = (`<span class='timao'><b>Salve o  Corinthians!</b></span>`);
+        }
+
+        else if ( time  == "Palmeiras") {
+            timees.innerHTML = (`<span class='verdao'><b>Avante Palmeiras!</b></span>`);
+        }   
+
+        else if ( time == 'São Paulo'){
+            timees.innerHTML = (`<span class='tricolor'><b>Salve o tricolor paulista!</b></span>`);
+        }
+
+        else if (time == 'Santos'){
+            timees.innerHTML = (`<span class='peixe'><b>Agora quem da bola é o santos!</b></span>`);
+        
+        }
+        
+            
+     }
+</script>

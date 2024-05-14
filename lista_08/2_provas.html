@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Nota ENEM</label>
+    <input type="text" name="" id="ipt_enem">
+    <br><br>
+    <label for="">Nota vestibular</label>
+    <input type="text" name="" id="ipt_vest">
+    <br><br>
+    <button onclick="sla()">Avaliação</button>
+    
+</body>
+</html>
+
+<script>
+
+    function sla(){
+        var enem = Number(ipt_enem.value);
+        var vest  = Number(ipt_vest.value);
+
+        if ( enem >= 800 || vest  >= 700){
+            alert(`Parabéns! Aprovado`)
+    }
+
+    else{
+        alert(`Tente semestre que vem!`)
+    }
+}
+
+
+</script>

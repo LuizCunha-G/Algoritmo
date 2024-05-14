@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lindinho.css">
+</head>
+<body>
+    <label for=""> tipo de passageiro: </label>
+    <select name="" id="sltc_pass">
+        <option value="0" selected="selected">Escolha uma opção</option>
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+    <br><br>
+    <label for="">tipo de passagem: </label>
+    <select name="" id="sltc_psgr">
+        <option value="0" selected="selected">Escolha uma opção</option>
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem Integração</option>
+    </select>
+    <br><br> 
+    <button onclick="sla()">Simular Preço</button>
+</body>
+</html>
+<script>
+    function sla(){
+        var passageiro = sltc_pass.value;
+        var passagem = sltc_psgr.value;
+        var pas = 4.40;
+        var integ = 5.90;
+        var aluno = 0.50;
+        var velho = 0;
+        var comum  = 1;
+
+
+        if (passageiro == '1' && passagem == '1'){
+            var normal = (comum * pas);
+
+            alert(`Valor da passagem escolhida: R$ ${normal}`)
+        }
+
+         else if(passageiro == '1' &&  passagem  == '2') {
+            var integrada = (comum * integ);
+
+            alert(`Valor da passagem escolhida: R$ ${integrada}`)
+        }
+
+        else if (passageiro == '2' && passagem == '1'){
+            var desc_comum = (aluno * pas);
+            var vai_comum = ( pas - desc_comum);
+
+            alert(`Valor da passagem escolhida: R$ ${vai_comum}`)
+        }
+
+        else if (passageiro == '2' &&  passagem == '2'){
+            var  desc_int = (aluno * integ);
+            var vai_de_int = (integ - desc_int);
+
+            alert(`Valor da passagem escolhida: R$ ${vai_de_int}`)
+        }
+
+        else if (passageiro == '3' && passagem == '1' || passagem == '2'){
+            alert(`Valor da passagem escolhida: R$ ${velho}`)
+        }
+    }
+</script>

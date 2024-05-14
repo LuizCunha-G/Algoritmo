@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L12-Ex03</title>
+</head>
+
+<body>
+    Bairros onde você morou: <input type="text" id="input_bairro">
+    <button onclick="adicionar()">Cadastrar bairro</button>
+    <b id="b_sucesso"></b><br><br>
+    Qual bairro você quer relembrar: <input type="number" id="input_numero">
+    <button onclick="relembrar()">Relembrar moradia</button> <br><br>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var lista_bairros = [];
+
+    function adicionar() {
+        if (input_bairro.value == '') {
+            alert("digite o nome do bairro que você morou")
+        } else {
+            lista_bairros.push(input_bairro.value);
+            b_sucesso.innerHTML = `O bairro ${input_bairro.value} cadastrado com sucesso!`;
+            input_bairro.value = '';
+        }
+    }
+
+    function relembrar() {
+        var index = Number(input_numero.value);
+        b_sucesso.innerHTML = '';
+        if (index <= 0) {
+            alert("Informe qual bairro você quer relembrar")
+        } else if (index <= lista_bairros.length) {
+            div_mensagem.innerHTML = `O ${index}º bairro que você morou foi o ${lista_bairros[index - 1]}`;
+        } else {
+            div_mensagem.innerHTML = `Você ainda não morou num ${index}º bairro!`
+        }
+    }
+
+</script>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)file:///C:/Users/Marise%20Miranda/Downloads/Marises%20Machine.html -->
+<html lang="pt-br">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+</head>
+
+
+<body>
+        <audio id="audio" src="botao.mp4" hidden></audio>
+        <audio id="audio2" src="Minecraft Anvil - Sound Effect.mp3" hidden></audio>
+
+
+        <div class="wrapper">
+                <div class="calculadora CalcDecimal">
+                        <center>
+                                <h1>📝 Davidson's And Bruno's Machine 📝</h1>
+                                <h3 style="padding-top: 8px;">Decimal</h3>
+                                <input id="input_decimal" type="text" placeholder="Digite o valor em decimal:">
+                                <div id="div_btn" class="div_btn" class="inputzinho">
+                                        <button onclick="converterDecimal()">Converter</button>
+                                        <button onclick="limparDecimal()">Limpar</button>
+                                </div>
+
+                                <div class="div_resultados">
+                                        <div id="RespostaDecimalOctal" class="demo"></div>
+                                        <div id="RespostaDecimalHex" class="demo"></div>
+                                        <div id="RespostaDecimalBinario" class="demo"></div>
+                                </div>
+                        </center>
+                </div>
+
+                <div class="calculadora CalcBinario">
+                        <center>
+                                <h1>📝 Davidson's And Bruno's Machine 📝</h1>
+                                <h3 style="padding-top: 8px;">Binário</h3>
+                                <input id="input_binario" type="text" placeholder="Digite o valor em Binário:">
+                                <div id="div_btn" class="div_btn" class="inputzinho">
+                                        <button onclick="converterBinario()">Converter</button>
+                                        <button onclick="limparBinario()">Limpar</button>
+                                </div>
+                                <div class="div_resultados">
+                                        <div id="RespostaBinarioOctal" class="demo"></div>
+                                        <div id="RespostaBinarioHex" class="demo"></div>
+                                        <div id="RespostaBinarioDecimal" class="demo"></div>
+                                </div>
+                        </center>
+                </div>
+
+                <div class="calculadora CalcOctal">
+                        <center>
+                                <h1>📝 Davidson's And Bruno's Machine 📝</h1>
+                                <h3 style="padding-top: 8px;">Octal</h3>
+                                <input id="input_octal" type="text" placeholder="Digite o valor em Octal :">
+
+                                <div id="div_btn" class="div_btn" class="inputzinho">
+                                        <button onclick="converterOctal()">Converter</button>
+                                        <button onclick="limparOctal()">Limpar</button>
+                                </div>
+
+                                <div class="div_resultados">
+                                        <div id="RespostaOctalBinario" class="demo"></div>
+                                        <div id="RespostaOctalHex" class="demo"></div>
+                                        <div id="RespostaOctalDecimal" class="demo"></div>
+                                </div>
+                        </center>
+                </div>
+
+                <div class="calculadora CalcHex">
+                        <center>
+                                <h1>📝 Davidson's And Bruno's Machine 📝</h1>
+                                <h3 style="padding-top: 8px;">Hexadecimal</h3>
+                                <input id="input_hex" type="text" placeholder="Digite o valor em Hexadecimal:">
+                                <div id="div_btn" class="div_btn" class="inputzinho">
+                                        <button onclick="converterHexa()">Converter</button>
+                                        <button onclick="limparHexa()">Limpar</button>
+                                </div>
+
+                                <div class="div_resultados">
+                                        <div id="RespostaHexOctal" class="demo"></div>
+                                        <div id="RespostaHexBinario" class="demo"></div>
+                                        <div id="RespostaHexDecimal" class="demo"></div>
+                                </div>
+                        </center>
+                </div>
+
+        </div>
+
+
+        <div id="div_footer" class="div_footer div_img">
+                <img src="https://www.sptech.school/assets/images/logos/sptech_logo_negativa_1.png"
+                        alt="imagem_SPTECH">
+
+                <div id="div_elementos" class="div_elementos">
+
+                        <p class="paragrafo_elementos">Feito Por: Bruno Milici e Davidson Ferreira   1SIS</p>
+                </div>
+
+                <div id="div_elementos2" class="div_elementos2">
+
+                        <p class="paragrafo_elementos"> <img class="img_icone"
+                                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                                        alt="imagem_GitHub"><a href="https://github.com/Davidsonmf07" target="_blank">Davidsonmf07</a><br> </p>
+                </div>
+
+                <div id="div_elementos3" class="div_elementos3">
+                        <p class="paragrafo_elementos"> <img class="img_icone"
+                                        src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                                        alt=""> <a href="https://github.com/BrunoMilici" target="_blank">BrunoMilici</a></p>
+                </div>
+        </div>
+
+
+
+        <script>
+
+                function converterDecimal() {
+                        var audio = document.getElementById("audio");
+                        audio.play();
+
+                        var decimal = Number(input_decimal.value);
+
+                        let octal = decimal.toString(8);
+
+                        let hexadecimal = decimal.toString(16);
+
+                        let binaria = decimal.toString(2);
+
+        
+                        document.getElementById("RespostaDecimalOctal").innerHTML = ` O valor em Octal é: <span style="color: blueviolet;">${octal} </span>`;
+                        document.getElementById("RespostaDecimalHex").innerHTML = ` O valor em Hexadecimal é: <span style="color: blueviolet;"> ${hexadecimal} </span>`;
+                        document.getElementById("RespostaDecimalBinario").innerHTML = ` O valor em Binário é: <span style="color: blueviolet;"> ${binaria} </span>`;
+
+
+                }
+
+                function converterOctal() {
+
+                        var audio = document.getElementById("audio");
+                        audio.play();
+
+                        var octal = parseInt(input_octal.value,8);
+
+                        let decimal = octal.toString(10);
+
+                        let hexadecimal = octal.toString(16);
+
+                        let binaria = octal.toString(2);
+
+
+                       
+                        document.getElementById("RespostaOctalBinario").innerHTML = ` O valor em Decimal é: <span style="color: blueviolet;">${decimal} </span>`;
+                        document.getElementById("RespostaOctalHex").innerHTML = `O valor em Hexadecimal é: <span style="color: blueviolet;"> ${hexadecimal} </span>`;
+                        document.getElementById("RespostaOctalDecimal").innerHTML = ` O valor em Binário é: <span style="color: blueviolet;"> ${binaria} </span>`;
+
+
+                }
+
+                function converterBinario() {
+                        var audio = document.getElementById("audio");
+                        audio.play();
+
+                        var binario = parseInt(input_binario.value,2);
+
+                        let octal = binario.toString(8);
+
+                        let hexadecimal = binario.toString(16);
+
+                        let decimal = binario.toString(10);
+
+
+        
+                        document.getElementById("RespostaBinarioOctal").innerHTML = ` O valor em Octal é: <span style="color: blueviolet;">${octal} </span>`;
+                        document.getElementById("RespostaBinarioHex").innerHTML = ` O valor em Hexadecimal é: <span style="color: blueviolet;"> ${hexadecimal} </span>`;
+                        document.getElementById("RespostaBinarioDecimal").innerHTML = ` O valor em Decimal é: <span style="color: blueviolet;"> ${decimal} </span>`;
+
+
+                }
+
+                function converterHexa() {
+                        var audio = document.getElementById("audio");
+                        audio.play();
+
+                        var hexadecimal = parseInt(input_hex.value,16);
+
+                        let octal = hexadecimal.toString(8);
+
+                        let decimal = hexadecimal.toString(10);
+
+                        let binaria = hexadecimal.toString(2);
+
+                        var audio = document.getElementById("audio");
+                        audio.play();
+
+                        
+                        document.getElementById("RespostaHexOctal").innerHTML = ` O valor em Octal é: <span style="color: blueviolet;">${octal} </span>`;
+                        document.getElementById("RespostaHexBinario").innerHTML = ` O valor em Binário é: <span style="color: blueviolet;"> ${binaria} </span>`;
+                        document.getElementById("RespostaHexDecimal").innerHTML = ` O valor em Decimal é: <span style="color: blueviolet;"> ${decimal} </span>`;
+
+
+                }
+
+
+                document.bgColor = "#00ffff";
+
+
+                function limparDecimal() {
+                        document.getElementById("input_decimal").value = "";
+                        document.getElementById("RespostaDecimalOctal").innerHTML = "";
+                        document.getElementById("RespostaDecimalHex").innerHTML = "";
+                        document.getElementById("RespostaDecimalBinario").innerHTML = "";
+
+                        var audio = document.getElementById("audio2");
+                        audio.play();
+                }
+
+                function limparBinario() {
+                        document.getElementById("input_binario").value = "";
+                        document.getElementById("RespostaBinarioOctal").innerHTML = "";
+                        document.getElementById("RespostaBinarioHex").innerHTML = "";
+                        document.getElementById("RespostaBinarioDecimal").innerHTML = "";
+
+                        var audio = document.getElementById("audio2");
+                        audio.play();
+                }
+
+                function limparOctal() {
+                        document.getElementById("input_octal").value = "";
+                        document.getElementById("RespostaOctalBinario").innerHTML = "";
+                        document.getElementById("RespostaOctalHex").innerHTML = "";
+                        document.getElementById("RespostaOctalDecimal").innerHTML = "";
+
+                        var audio = document.getElementById("audio2");
+                        audio.play();
+                }
+
+                function limparHexa() {
+                        document.getElementById("input_hex").value = "";
+                        document.getElementById("RespostaHexOctal").innerHTML = "";
+                        document.getElementById("RespostaHexBinario").innerHTML = "";
+                        document.getElementById("RespostaHexDecimal").innerHTML = "";
+
+                        var audio = document.getElementById("audio2");
+                        audio.play();
+                }
+
+        
+                       
+
+
+        </script>
+</body>
+
+</html>

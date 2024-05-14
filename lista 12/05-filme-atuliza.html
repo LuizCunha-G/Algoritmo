@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Filmes Preferidos</title>
+</head>
+<body>
+
+    <h1> Cadastre seus Filmes Preferidos </h1>
+
+    <p>Digite seu Filme Preferido:</p>
+    <input type="text" id="input_filme">
+    <br><br>
+
+    <button onclick="filmesFavoritos()"> Cadastrar Filme </button>
+    
+    <h2>Resultado</h2>
+    <p id="resultado"></p>
+
+</body>
+</html>
+
+<script>
+
+    var listaFilme = [];
+
+    function filmesFavoritos(){
+        var filme = input_filme.value;
+        var indiceFilme = listaFilme.indexOf( filme );
+
+        if (indiceFilme != -1){
+            alert('Você ja adicionou esse filme');
+        
+        } else {
+            alert('Filme Cadastrado com Sucesso');
+            listaFilme.push( filme );
+            var tamanhoLista = listaFilme.length;
+
+            if ( tamanhoLista <= 2 ){
+                resultado.innerHTML = `
+                    Seu filme favorito: <b>${listaFilme[0]}</b>
+                    <br>
+                    Seu 3º filme favorito: <b>Ainda Não Exite</b> 
+                    <br>
+                    Total de filmes cadastrados: <b>${tamanhoLista}</b>
+                `;
+            } else {
+                resultado.innerHTML = `
+                    Seu filme favorito: <b>${listaFilme[0]}</b>
+                    <br>
+                    Seu 3º filme favorito: <b>${listaFilme[2]}</b> 
+                    <br>
+                    Total de filmes cadastrados: <b>${tamanhoLista}</b>
+                `;
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styli.css">
+</head>
+<body>
+    <input type="text" name="" id="ipt_numero">
+    <br><br>
+    <input type="text" name="" id="ipt_frase">
+    <br><br>
+    <button onclick="exibirFrase()">Papagaio</button>
+
+    <div id="msg"></div>
+
+    <script>
+        function exibirFrase() {
+            var numero = Number(ipt_numero.value);
+            var frase = ipt_frase.value;
+
+            var msg = document.getElementById("msg");
+            msg.innerHTML = ""; // Limpar conteúdo anterior
+
+            for(var index = 0; index < numero; index++) {
+                msg.innerHTML += `<p>${frase}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

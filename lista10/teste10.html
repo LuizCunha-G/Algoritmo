@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exibir Números Pares</title>
+</head>
+<body>
+    <label for="start">Início do intervalo:</label>
+    <input type="text" id="start" name="start">
+    <label for="end">Fim do intervalo:</label>
+    <input type="text" id="end" name="end">
+    <button onclick="exibirPares()">S2 Pares</button>
+
+    <div id="pares"></div>
+
+    <script>
+        function exibirPares() {
+            var start = parseInt(document.getElementById("start").value);
+            var end = parseInt(document.getElementById("end").value);
+            var paresDiv = document.getElementById("pares");
+            var pares = [];
+
+            // Encontrar o primeiro número par dentro do intervalo
+            var primeiroPar = start + (start % 2 === 0 ? 0 : 1);
+
+            // Loop for para adicionar os números pares ao array
+            for (var i = primeiroPar; i <= end; i += 2) {
+                pares.push(i);
+            }
+
+            paresDiv.innerHTML = pares.length === 0 ?
+                "<p>Nenhum número par encontrado no intervalo.</p>" :
+                "<p>Números pares no intervalo:</p><p>" + pares.join(", ") + "</p>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Analise os resultados e diga o que está acontecendo</h2>
+    <label for="">Entre com a quantidade</label>
+    <input type="text" id="ipt_qtd">
+    <button onclick="sortear()">Executar</button>
+    <br><br>
+    <div id="resul"></div>
+</body>
+</html>
+<script>
+ function sortear(){
+        var qtd = Number(ipt_qtd.value);
+        var aleatorio = 0;
+        var acima = 0;
+        var abaixo = 0;
+        var maior = 0;
+        var menor = 1;
+        var primeiro = 'sim'
+        var total = 0
+
+        for(var i = 0 ; i < qtd; i++){
+            aleatorio = Math.random();
+            if(primeiro =='sim'){
+                maior = aleatorio;
+                menor = aleatorio;
+                primeiro='nao';
+            }
+
+            if (aleatorio > maior){
+                maior =  aleatorio;
+        }
+            if (aleatorio < menor){
+                 menor = aleatorio;
+        }
+        
+
+
+            if (aleatorio >= 0.5){
+            resul.innerHTML += `${aleatorio} está na sua metade superior do numeros <br>`;
+            acima ++;
+            total = total+aleatorio
+
+    
+        }
+        else {
+            resul.innerHTML += `${aleatorio} está na sua metade inferior do numeros <br>`;
+            abaixo++;
+            total = total+aleatorio
+        }
+        
+        total = total /qtd
+    resul.innerHTML += `Total de numeros sorteados acima da metade ${acima}<br>
+    Total de numeros sorteados abaixo da metade${abaixo} <br>
+    Maior numero sorteado = ${maior} <br>
+    Menor numero sorteado = ${menor} <br>
+    Total dos numeros sorteados ${total}<br>
+    Primeiro ${primeiro}`
+    }
+    }
+</script>

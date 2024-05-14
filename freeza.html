@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Analise os resultados e diga o que está acontecendo</h2>
+    <label for="">Entre com a quantidade</label>
+    <input type="text" id="ipt_qtd">
+    <button onclick="sortear()">Executar</button>
+    <br><br>
+    <div id="resul"></div>
+</body>
+</html>
+<script>
+    function sortear(){
+        var ax_qtd = Number(ipt_qtd.value);
+        var ax_aleatorio = 0
+        
+        for(var i = 0 ; i < ax_qtd; i++){
+            ax_aleatorio = Math.random();
+            if (ax_aleatorio >= 0.5){
+            resul.innerHTML += `${ax_aleatorio} está na sua metade superior do numeros <br>`
+        }
+
+        else {
+            resul.innerHTML += `${ax_aleatorio} está na sua metade inferior do numeros <br>`
+        }
+    }
+    }
+
+</script>

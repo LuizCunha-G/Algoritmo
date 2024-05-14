@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Economia</h1>
+
+    <label for="">Qual sua meta de economia</label>
+    <input type="text" name="" id="input_economia">
+    <br><br>
+    <label for="">Qual é o valor que você tem na conta</label>
+    <input type="text" name="" id="input_valor">
+    <br><br>
+    <button onclick="calcular()">Analisar Economia</button>
+    <br><br>
+
+    <div id="resultado"></div>
+</body> 
+</html>
+
+<script>
+
+    function  calcular(){
+        var meta = Number(input_economia.value);
+        var economia = Number(input_valor.value);
+        var teste1 = (meta - economia);
+        var teste2 = (economia - meta);
+
+        if (economia == meta){
+
+            resultado.innerHTML = (`Parabéns Meta alcançada`)
+        }
+
+        else if (economia > meta) {
+            resultado.innerHTML = (`Meta ultrapassada em ${teste2}`)
+        }
+
+        else if ( economia < meta ){
+            resultado.innerHTML  =(`Força! Ainda em busca da meta! Falta ${teste1}`)
+        }
+    }
+
+</script>

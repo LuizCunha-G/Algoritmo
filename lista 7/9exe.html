@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body">
+    <h1>Pilottus</h1>
+
+
+ <p><b>Processo Seletivo dos Pilotos</b></p>
+    <label for="">Altura inicial</label>
+    <input type="text" name="" id="altura_inicial">
+    <br><br>
+    <label for="">Altura final</label>
+    <input type="text" name="" id="altura_final">
+    <br><br>
+   
+    <label for="">Nome do piloto</label>
+    <input type="text" name="" id="nome_dopiloto">
+
+    <label for="">Altura do piloto</label>
+    <input type="text" name="" id="input_altura">
+    <br><br><br>
+
+    <button onclick="f1()">Verificar candidato</button>
+
+    <br><br><br>
+
+    <div id="resultado"></div>
+    <br><br>
+    <div id="resultadu"></div>
+    
+</body>
+</html>
+
+<script>
+
+    function f1(){
+        var  altIni = Number(altura_inicial.value);
+        var altFin = Number(altura_final.value);
+        var nome = nome_dopiloto.value;
+        var altura = Number(input_altura.value);
+
+        if ( altIni > 1 && altFin > altIni){
+            resultado.innerHTML = (``)
+        }
+
+          else {
+             alert (`Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial`)
+        }
+
+        if( altura < altFin && altura >= altIni){
+            resultado.innerHTML += (`O candidato ${nome}, com altura de ${altura} metros, participará do processo de seleção de piloto`)
+        }
+
+        else {
+            resultado.innerHTML += (`Infelizmente, o candidato ${nome}, com altura de ${altura} metros, não atende os requisitos da seleção`) 
+        }
+        
+    }
+
+</script>

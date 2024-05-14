@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    frase: <input type="text" id="ipt_frase">
+    <button onclick="exibir()">exibir</button>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function exibir(){
+        var frase = ipt_frase.value;
+        var qtd_frase = frase.length;
+
+        msg.innerHTML = `${frase}<br><br>`
+        // msg.innerHTML += `${qtd_frase}<br>`
+
+        if(qtd_frase > 5){
+            alert('Deve ter ao máximo 5 caracteres')
+            }
+            else{
+                msg.innerHTML += `
+                ${frase[0]} <br>
+                ${frase[1]} <br>
+                ${frase[2]} <br>
+                ${frase[3]} <br>
+                ${frase[4]} <br>
+                `
+        }
+        
+    }
+</script>

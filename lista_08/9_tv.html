@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1></h1>
+    <label for="">Marca</label>
+    <input type="text" name="" id="ipt_marca">
+    <br>
+    <label for="">Preço</label>
+    <input type="text" name="" id="int_preco">
+    <br>
+    <br>
+    <button onclick="cal()">Analisar Compra</button>
+
+    
+</body>
+</html>
+
+<script>
+
+    var marca = ''
+
+    function cal(){
+        marca = ipt_marca.value;
+        var preco = Number(int_preco.value);
+
+        if(preco <= 800 || preco >= 2000 ){
+
+            alert(`TV fora da faixa de preço`)
+
+        }
+        else if (marca == 'Mondial' || marca == 'Britania'){
+                alert(`Na faixa de preço, porém marca não confiável`)
+            }
+        
+        else if (marca == 'LG' || marca == 'Samsung' ){
+            alert(`Essa TV pode entrar na sua lista!`)
+
+        }
+
+        if(preco <  800 ){
+            alert(`Preço baixo demais!`)
+        }
+        
+        if (preco > 2000){
+            alert(`TV cara demais, infelizmente`)
+
+        }
+
+    }
+
+</script>

@@ -1,0 +1,224 @@
+
+        body {
+
+                /* background-image: url("https://img.freepik.com/premium-photo/information-technology-digital-binary-code-background-seamless-loop-4k_697634-164.jpg?w=826");
+                height: 100%; */
+
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                background: rgb(39, 20, 189);
+                background: linear-gradient(90deg, rgba(39, 20, 189, 1) 0%, rgba(18, 6, 83, 0.9276960784313726) 35%, rgba(35, 218, 255, 1) 100%);
+
+        }
+
+        .wrapper {  display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-auto-columns: 1fr;
+                gap: 0px 0px;
+                grid-auto-flow: row;
+                grid-template-areas:
+                  "CalcDecimal CalcOctal"
+                  "CalcBinario CalcHex";
+              }
+              
+
+        h1,h3,b {
+                color: #000;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        h1 {
+                padding-top: 20px;
+                font-size: 28px;
+        }
+
+        center {
+                background-color: #f1f1f1;
+                margin-top: 5%;
+                margin-left: 20%;
+                margin-right: 20%;
+                border-radius: 15px;
+                box-shadow: 0px 0px 10px 8px #40d2ff73;
+                margin-bottom: 20%;
+            
+                -webkit-transition: -webkit-transform 0.5s;
+                transition: transform 0.5s;
+                transform: scale(1);
+        }
+
+        center:hover {
+                background: linear-gradient(90deg, rgb(166, 157, 231) 0%, rgba(111, 91, 225, 0.928) 35%, rgb(28, 233, 205) 100%);
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                color: white;
+                box-shadow: 0px 0px 10px 8px #cad4d773;
+        }
+
+        center:hover h1,
+        center:hover h3,
+        center:hover .demo,
+        center:hover .BBB {
+                color: white;
+        }
+
+        .BBB {
+                transition: background-position 0.3s, transform 0.3s;
+
+        }
+
+        .BBB :hover {
+
+                transform: scale(1.1);
+        }
+
+
+        .div_btn {
+                padding-top: 28px;
+                padding-bottom: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+
+        }
+
+        input {
+                padding-top: 5px;
+                padding-bottom: 7px;
+                transition: background-position 0.3s, transform 0.3s;
+        }
+
+        input:hover {
+
+                transform: scale(1.1);
+
+
+        }
+
+        .demo {
+                padding-top: 20px;
+        }
+
+        .demo :hover {
+                transform: scale(1.1);
+
+        }
+
+        button {
+                border-radius: 5px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                background: rgb(2, 0, 36);
+                color: white;
+                height: 30px;
+                width: 80px;
+                transition: background-position 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+
+                background: linear-gradient(90deg, rgb(12, 2, 194) 0%, rgb(9, 117, 121) 35%, rgba(0, 212, 255, 1) 100%);
+                color: white;
+                background-position: 100% 0;
+                transform: scale(1.1);
+
+        }
+
+
+        .div_resultados {
+
+                padding-bottom: 25px;
+                color: rgb(48, 43, 43);
+                font-weight: 400;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+        }
+
+        p {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                color: rgb(243, 230, 230);
+                padding-left: 38%;
+                font-weight: bold;
+
+
+
+        }
+
+        .div_footer {
+                background: linear-gradient(90deg, rgb(28, 48, 86) 0%, rgb(22, 87, 89) 35%, rgb(30, 8, 86) 100%);
+                height: 100px;
+                width: 100%;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                color: white;
+                display: flex;
+                text-align: center;
+                line-height: 50px;
+                text-decoration: none;
+                
+        }
+
+        .div_img {
+
+                display: flex;
+                align-self: flex-start;
+        }
+
+        .div_elementos {
+                /* background-color: #000; */
+                width: 29%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: start;
+                /* margin: 0%; */
+        }
+
+        .paragrafo_elementos {
+                color: #f1f1f1;
+                font-size: 15px;
+        }
+
+        .div_elementos2 {
+                width: 30%;
+                /* background-color: #000; */
+        }
+
+
+        .img_icone {
+
+                width: 10%;
+                height: 10%;
+                padding-right: 8px;
+
+
+        }
+
+        .div_elementos3 {
+
+                width: 30%;
+                color: #f1f1f1;
+                font-size: 15px;
+
+
+        }
+
+        a { 
+                font-size: large;
+                color: white;
+                text-decoration: none; 
+              } 
+              a:visited { 
+                text-decoration: none; 
+              } 
+              a:hover { 
+                text-decoration: underline; 
+              } 
+              a:active { 
+                text-decoration: none; 
+              }
+              
+

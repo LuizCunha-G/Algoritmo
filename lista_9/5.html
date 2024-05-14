@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lindinho.css">
+</head>
+<body>
+    <h1>Clima</h1>
+    <label for="">Temperatura: </label>
+    <input type="text" name="" id="ipt_temp">
+    <br><br>
+    <label for="">Umidade: </label>
+    <input type="text" name="" id="ipt_umidade">
+    <br><br>
+    <button onclick="sla()">Avaliar o clima</button>
+    <button onclick='lia()'>Limpar campos</button>
+    
+</body>
+</html>
+<script>
+    function sla(){
+        var temp = Number(ipt_temp.value);
+        var umi = Number(ipt_umidade.value);
+
+        if( temp < 0 || temp > 100 ){
+            alert(`Valor de umidade inválido`)
+        }   
+        
+}
+
+    function lia(){
+        ipt_temp = ''
+        ipt_umidade = ''
+
+    }
+</script>
